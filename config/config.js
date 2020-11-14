@@ -3,24 +3,24 @@ dotenv.config()
 
 module.exports={
   "development": {
-    "username": "ahah12k",
+    "username": "root",
     "password": process.env.DB_PASSWORD,
     "database": "ahah12k",
-    "host": "ahah12k.cafe24.com",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "ahah12k",
+    "username": "root",
     "password": process.env.DB_PASSWORD,
     "database": "ahah12k",
-    "host": "ahah12k.cafe24.com",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "ahah12k",
+    "username": "root",
     "password": process.env.DB_PASSWORD,
     "database": "ahah12k",
-    "host": "ahah12k.cafe24.com",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }
