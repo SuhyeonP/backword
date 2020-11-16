@@ -37,4 +37,24 @@ router.post('/logout', isLoggedIn, (req, res) => {
     res.send('ok');
 });
 
+router.get('/',async(req,res,next)=>{
+    try{
+        if(req.user){
+            const fullAdminWithoutPw=await REACT_SVT_ADMIN.findOne({
+                where:{id:req.user.id},
+                attributes:{
+                    exclude:['password']
+                }
+            })
+            res.status(200).json(fullAdminWithoutPw)
+        }else{
+            res.status(200).json(null)
+        }
+    }catch(err){
+        console.error(err);
+        next(err)
+    }
+})
+
+
 module.exports = router;

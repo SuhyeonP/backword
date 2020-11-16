@@ -46,13 +46,11 @@ if(process.env.NODE_ENV === 'production'){
         credentials: true,
     }));
 }
-
-
-
 app.use('/', express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
+
 app.use(session({
     saveUninitialized: false,
     resave: false,
@@ -80,3 +78,7 @@ app.use('/album',albumRouter);
 app.listen(80, () => {
     console.log('서버 실행 중!');
 });
+
+// app.listen(3050, () => {
+//     console.log('서버 실행 중!');
+// });

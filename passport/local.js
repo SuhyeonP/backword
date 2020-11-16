@@ -1,6 +1,6 @@
 const passport = require('passport');
 const { Strategy: LocalStrategy } = require('passport-local');
-const { Admin } = require('../models');
+const { REACT_SVT_ADMIN } = require('../models');
 
 module.exports = () => {
     passport.use(new LocalStrategy({
@@ -8,7 +8,7 @@ module.exports = () => {
         passwordField: 'password',
     }, async (userId, password, done) => {
         try {
-            const user = await Admin.findOne({
+            const user = await REACT_SVT_ADMIN.findOne({
                 where: { userId }
             });
             if (!user) {
