@@ -12,7 +12,7 @@ module.exports=(sequelize,DataTypes)=>{
             type:DataTypes.STRING(20),
             allowNull:false,
         },
-        src:{
+        img:{
           type:DataTypes.STRING(200),
           allowNull:false,
         }

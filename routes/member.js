@@ -5,8 +5,9 @@ const {REACT_SVT_MEMBER}=require('../models')
 router.get('/',async(req,res,next)=>{
     try{
         const members=await REACT_SVT_MEMBER.findAll({
+            limit:13,
             order:['id'],
-            attributes:['id','name','birth','src','part']
+            attributes:['id','name','birth','img','part']
         })
         res.status(200).json(members);
     }catch(err){
@@ -19,7 +20,7 @@ router.get('/:member',async(req,res,next)=>{
         const memberId=Number(req.params.member)
         const member=await REACT_SVT_MEMBER.findOne({
             where:{id:memberId},
-            attribute:['id','name','birth','part','src']
+            attribute:['id','name','birth','part','img']
         })
         res.status(200).json(member);
     }catch(err){
