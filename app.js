@@ -36,13 +36,13 @@ if(process.env.NODE_ENV === 'production'){
     app.use(hpp())
     app.use(helmet())
     app.use(cors({
-        origin: ['http://localhost:3000','http://honeyhyoni.shop'],
+        origin: ['http://localhost:3000','http://honeyhyoni.shop','http://data.honeyhyoni.shop/'],
         credentials: true,
     }));
 }else{
     app.use(morgan('dev'));
     app.use(cors({
-        origin: ['http://localhost:3000','http://honeyhyoni.shop'],
+        origin: ['http://localhost:3000','http://honeyhyoni.shop','http://data.honeyhyoni.shop/'],
         credentials: true,
     }));
 }
